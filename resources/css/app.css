@@ -1,8 +1,7 @@
-.link {
-    margin: 10px;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .link.active {
-    background-color: red;
-    color: white;
+    color: #3b82f6;
 }
