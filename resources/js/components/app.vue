@@ -1,11 +1,11 @@
 <template>
     <navbar />
-    <main class="max-w-screen-xl flex flex-wrap flex-col md:flex-row items-center justify-between mx-auto p-4 relative">
+    <main>
         <router-view />
     </main>
 </template>
 
 
 <script setup>
-import navbar from '../components/layouts/navbar.vue'
+import navbar from './layouts/user/navbar.vue'
 </script>

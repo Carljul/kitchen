@@ -3,16 +3,22 @@
         <div class="max-w-screen-xl flex flex-wrap flex-col md:flex-row items-center justify-between mx-auto p-4 relative">
             <div class="w-full flex flex-nowrap justify-between items-center md:w-[unset]">
                 <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="../../../assets/logo2.png" class="h-[100px]" alt="Love's Kitchen" />
+                    <img src="../../../../assets/logo3.png" class="h-[100px]" alt="Love's Kitchen" />
                 </router-link>
-                
-                <!-- Cart -->
-                <div @click="viewCart" class="block md:hidden cursor-pointer bg-[#c77a10] rounded-md px-[8px] py-[5px]">
-                    <font-awesome-icon icon="basket-shopping" size="lg" color="white" />
+
+                <div class="flex gap-[10px]">
+                    <!-- Cart -->
+                    <div @click="viewCart" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px]" :style="`background: ${mainColorClass};`">
+                        <font-awesome-icon icon="basket-shopping" size="lg" color="white" />
+                    </div>
+                    <!-- Login -->
+                    <router-link to="" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
+                        Login / Signup
+                    </router-link>
                 </div>
             </div>
-            <div class="flex md:order-2 w-full md:w-[400px] ">
-                <div class="md:flex items-center gap-[15px] w-full">
+            <div class="flex md:order-2 w-full md:w-[450px] ">
+                <div class="md:flex items-center gap-[15px] w-full mt-4 md:mt-0">
                     <!-- Search -->
                     <div class="relative md:block w-full">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -21,16 +27,20 @@
                             </svg>
                             <span class="sr-only">Search icon</span>
                         </div>
-                        <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border rounded-md" placeholder="Search...">
+                        <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border rounded-md" placeholder="Discover your dish">
                         <div class="absolute inset-y-0 end-0 flex items-center ps-3 cursor-pointer" @click="test">
-                            <button class="text-[10px] bg-[#c77a10] border-0 px-[10px] py-[8px] rounded-md mr-[3px] text-white">Search</button>
+                            <button class="text-[12px] border-0 px-[10px] py-[8px] rounded-md mr-[3px] text-white" :style="`background: ${mainColorClass};`">Search</button>
                         </div>
                     </div>
 
                     <!-- Cart -->
-                    <div @click="viewCart" class="hidden md:block cursor-pointer bg-[#c77a10] rounded-md px-[8px] py-[5px]">
+                    <div @click="viewCart" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px]" :style="`background: ${mainColorClass};`">
                         <font-awesome-icon icon="basket-shopping" size="lg" color="white" />
                     </div>
+                    <!-- Login -->
+                    <router-link to="" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
+                        Login / Signup
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -44,6 +54,11 @@
                 isMenuOpen: false,
                 isHamburgerOpen: false,
                 isSearchOpen: false
+            }
+        },
+        computed: {
+            mainColorClass() {
+                return this.$mainColorClass
             }
         },
         methods: {
