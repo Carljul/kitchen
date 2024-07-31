@@ -3,7 +3,7 @@
         <div class="max-w-screen-xl flex flex-wrap flex-col md:flex-row items-center justify-between mx-auto p-4 relative">
             <div class="w-full flex flex-nowrap justify-between items-center md:w-[unset]">
                 <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="../../../../assets/logo3.png" class="h-[100px]" alt="Love's Kitchen" />
+                    <img src="../../../../assets/logo4.jpg" class="h-[100px]" alt="Love's Kitchen" />
                 </router-link>
 
                 <div class="flex gap-[10px]">
