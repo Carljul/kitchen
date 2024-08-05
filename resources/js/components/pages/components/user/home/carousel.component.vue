@@ -71,7 +71,7 @@
                         <router-link to="#" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">Pastries</router-link>
                     </li>
                     <li class="w-full h-[54px] shadow-sm rounded-md bg-white flex items-center border-b-2 md:border-b-0 md:border-l-4 border-orange-700">
-                        <router-link to="#" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">Pastries</router-link>
+                        <router-link to="#" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">Vegetables</router-link>
                     </li>
                     <li class="w-full h-[54px] shadow-sm rounded-md bg-white flex items-center border-b-2 md:border-b-0 md:border-l-4 border-orange-700">
                         <router-link to="#" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">Pastries</router-link>

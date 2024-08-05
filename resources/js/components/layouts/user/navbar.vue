@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-white border-b-[1px] border-gray-300">
+    <nav :class="`bg-white border-b-[1px] border-gray-300 fixed top-0 z-[999] w-full md:relative transition-all duration-100 ease-in-out ${isVisible ? 'max-h-50 opacity-100' : 'max-h-0 opacity-0'}`">
         <div class="max-w-screen-xl flex flex-wrap flex-col md:flex-row items-center justify-between mx-auto p-4 relative">
             <div class="w-full flex flex-nowrap justify-between items-center md:w-[unset]">
                 <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -53,7 +53,8 @@
             return {
                 isMenuOpen: false,
                 isHamburgerOpen: false,
-                isSearchOpen: false
+                isSearchOpen: false,
+                isVisible: true,
             }
         },
         computed: {
@@ -62,26 +63,25 @@
             }
         },
         methods: {
-            toggleMenu(type) {
-                this.isMenuOpen = !this.isMenuOpen
-
-                switch (type) {
-                    case 'search':
-                        this.isHamburgerOpen = false
-                        this.isSearchOpen = !this.isSearchOpen
-                        break;
-                    case 'hamburger':
-                        this.isHamburgerOpen = !this.isHamburgerOpen
-                        this.isSearchOpen = !this.isSearchOpen
-                        break;
-                }
-            },
             test () {
                 alert('testing')
             },
             viewCart() {
                 alert('In progress')
-            }
+            },
+            handleScroll() {
+                const isMobile = window.innerWidth < 768;
+                if (isMobile) {
+                    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                    this.isVisible = scrollTop < 200;
+                }
+            },
+        },
+        mounted() {
+            window.addEventListener('scroll', this.handleScroll);
+        },
+        beforeDestroy() {
+            window.removeEventListener('scroll', this.handleScroll);
         },
     }
 </script>

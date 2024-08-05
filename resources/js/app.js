@@ -11,7 +11,7 @@ import router from './router'
 
 // Utilities
 import './library/icons'
-import Conts from './library/conts'
+import Conts from './library/const'
 
 createApp(app)
     .use(router)
