@@ -1,7 +1,10 @@
 <template>
     <router-link :to='goPath' class="w-[120px] md:w-[200px] rounded-md">
         <img :src="item.image" :alt="item.name" class="rounded-t-md">
-        <p class="font-semibold">{{ item.name }}</p>
+        <div class="flex flex-row relative">
+            <p class="font-semibold">{{ item.name }}</p>
+            <button class="absolute right-3 w-[30px] md:w-[40px] h-[30px] md:h-[40px] bg-yellow-400 rounded-[100%] text-white shadow-lg top-[-20px]"><font-awesome-icon icon="add" /></button>
+        </div>
         <div class="flex flex-col">
             <small class="text-[12px] truncate-text">{{ item.description }}</small>
             <div class="flex gap-[10px] items-center">

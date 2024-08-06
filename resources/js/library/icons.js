@@ -5,7 +5,10 @@ import {
     faHouse,
     faBowlFood,
     faUser,
-    faMagnifyingGlass
+    faMagnifyingGlass,
+    faArrowRight,
+    faAdd,
+    faUserAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 // Add icons to the library
@@ -15,5 +18,8 @@ library.add(
     faHouse,
     faBowlFood,
     faUser,
-    faMagnifyingGlass
+    faMagnifyingGlass,
+    faArrowRight,
+    faAdd,
+    faUserAlt,
 );

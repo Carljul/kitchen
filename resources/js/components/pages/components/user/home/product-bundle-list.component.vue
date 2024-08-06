@@ -1,7 +1,10 @@
 <template>
-    <div :style="`background-color: ${mainColorClassFade};`">
+    <div class="border-b-8 border-yellow-400" :style="`background-color: ${mainColorClassFade};`">
         <div :class="containerClass">
-            <h1 :class="`font-bold text-left my-3 md:mb-8 text-lg lg:text-[${jumboFont}]`">Eat with friends with our best food bundle!</h1>
+            <div class="flex flex-col md:flex-row mb-4 md:mb-0 items-center w-full justify-between">
+                <h1 :class="`font-bold text-left my-3 md:mb-8 text-lg lg:text-[${jumboFont}]`">Eat with friends with our best food bundle!</h1>
+                <router-link to="" class="font-bold flex items-center"><h1>VIEW ALL <font-awesome-icon icon="arrow-right"/></h1></router-link>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-4">
                 <CardsBundleComponent
                     v-for="product in bundleProducts"

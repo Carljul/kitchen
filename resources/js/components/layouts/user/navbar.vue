@@ -3,7 +3,7 @@
         <div class="max-w-screen-xl flex flex-wrap flex-col md:flex-row items-center justify-between mx-auto p-4 relative">
             <div class="w-full flex flex-nowrap justify-between items-center md:w-[unset]">
                 <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="../../../../assets/logo4.jpg" class="h-[100px]" alt="Love's Kitchen" />
+                    <img src="../../../../assets/logo6.jpg" class="h-[100px]" alt="Love's Kitchen" />
                 </router-link>
 
                 <div class="flex gap-[10px]">
@@ -13,7 +13,8 @@
                     </div>
                     <!-- Login -->
                     <router-link to="" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
-                        Login / Signup
+                        <span class="hidden md:block">Login / Signup</span>
+                        <font-awesome-icon :icon="['fas', 'user-alt']" size="lg" color="black" />
                     </router-link>
                 </div>
             </div>

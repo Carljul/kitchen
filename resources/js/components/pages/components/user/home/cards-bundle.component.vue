@@ -1,6 +1,6 @@
 <template>
     <router-link :to='goPath' class="w-full h-auto md:h-[350px] rounded-md flex flex-col md:flex-row gap-[10px] shadow-lg bg-white">
-        <img :src="item.image" :alt="item.name" class="w-full h-[350px] md:h-auto md:w-[300px] object-cover">
+        <img :src="item.image" :alt="item.name" class="w-full h-[350px] md:h-auto md:w-[300px] object-cover rounded-l-sm">
         <div class="flex-1 flex flex-col p-3">
             <div class="flex-1 flex flex-col">
                 <p class="font-semibold">{{ item.name }}</p>
