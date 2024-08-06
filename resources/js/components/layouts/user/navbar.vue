@@ -8,8 +8,9 @@
 
                 <div class="flex gap-[10px]">
                     <!-- Cart -->
-                    <div @click="viewCart" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px]" :style="`background: ${mainColorClass};`">
+                    <div @click="viewCart" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px] relative" :style="`background: ${mainColorClass};`">
                         <font-awesome-icon icon="basket-shopping" size="lg" color="white" />
+                        <span v-show="cartCount > 0" class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">{{cartCount}}</span>
                     </div>
                     <!-- Login -->
                     <router-link to="" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
@@ -35,8 +36,9 @@
                     </div>
 
                     <!-- Cart -->
-                    <div @click="viewCart" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px]" :style="`background: ${mainColorClass};`">
+                    <div @click="viewCart" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px] relative" :style="`background: ${mainColorClass};`">
                         <font-awesome-icon icon="basket-shopping" size="lg" color="white" />
+                        <span v-show="cartCount > 0" class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">{{cartCount}}</span>
                     </div>
                     <!-- Login -->
                     <router-link to="" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
@@ -61,6 +63,9 @@
         computed: {
             mainColorClass() {
                 return this.$mainColorClass
+            },
+            cartCount() {
+                return this.$store.getters['cart/cartCount']
             }
         },
         methods: {
@@ -76,7 +81,7 @@
                     const scrollTop = window.scrollY || document.documentElement.scrollTop;
                     this.isVisible = scrollTop < 200;
                 }
-            },
+            }
         },
         mounted() {
             window.addEventListener('scroll', this.handleScroll);

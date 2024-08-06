@@ -23,7 +23,7 @@
                 <router-link to="" class="flex flex-col relative">
                     <font-awesome-icon icon="basket-shopping" color="#373737"/>
                     <span class="text-[14px]">Orders</span>
-                    <span class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">3</span>
+                    <span v-show="cartCount > 0" class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">{{cartCount}}</span>
                 </router-link>
             </li>
             <li>
@@ -34,6 +34,10 @@
             </li>
         </ul>
     </div>
+    <div :class="`flex justify-between ${containerClass}`">
+        <span>© 2024</span>
+        <router-link to="">Terms and Conditions</router-link>
+    </div>
 </template>
 
 <script>
@@ -41,6 +45,15 @@ export default {
     data() {
         return {
             isVisible: false
+        }
+    },
+
+    computed: {
+        containerClass() {
+            return this.$containerClass
+        },
+        cartCount() {
+            return this.$store.getters['cart/cartCount']
         }
     },
 

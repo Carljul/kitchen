@@ -7,7 +7,7 @@
                 v-for="product in products"
                 :key="product"
                 :item="product"
-                :goPath="`/product/detail/${product.id}`"
+                :goPath="`/products/${product.id}`"
             />
         </div>
         <div class="flex w-full justify-center mt-6">

@@ -3,7 +3,12 @@
         <img :src="item.image" :alt="item.name" class="rounded-t-md">
         <div class="flex flex-row relative">
             <p class="font-semibold">{{ item.name }}</p>
-            <button class="absolute right-3 w-[30px] md:w-[40px] h-[30px] md:h-[40px] bg-yellow-400 rounded-[100%] text-white shadow-lg top-[-20px]"><font-awesome-icon icon="add" /></button>
+            <button
+                class="absolute right-3 w-[30px] md:w-[40px] h-[30px] md:h-[40px] bg-yellow-400 rounded-[100%] text-white shadow-lg top-[-20px]"
+                @click.stop="(e) => addItem(e, item)"
+            >
+                <font-awesome-icon icon="add" />
+            </button>
         </div>
         <div class="flex flex-col">
             <small class="text-[12px] truncate-text">{{ item.description }}</small>
@@ -25,6 +30,13 @@ export default {
         goPath: {
             type: String,
             reqiured: false
+        }
+    },
+    methods: {
+        addItem(event, product) {
+            event.preventDefault();
+            this.$store.dispatch('cart/addToCart', product)
+            this.$toast.success('Food added to cart')
         }
     }
 }

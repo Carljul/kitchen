@@ -15,7 +15,11 @@ const routes = [
         component: about
     },
     {
-        path: '/product/detail/:id',
+        path: '/products',
+        component: productDetail
+    },
+    {
+        path: '/products/:id',
         component: productDetail
     },
     {
