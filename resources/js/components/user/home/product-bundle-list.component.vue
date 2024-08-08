@@ -20,8 +20,8 @@
 
 <script>
 import CardsBundleComponent from './cards-bundle.component.vue';
-import bundle1 from '../../../../../../assets/food-bundle/bundle1.jpeg';
-import bundle2 from '../../../../../../assets/food-bundle/bundle2.jpg';
+import bundle1 from '@assets/food-bundle/bundle1.jpeg';
+import bundle2 from '@assets/food-bundle/bundle2.jpg';
 
 export default {
     name: "Product List",

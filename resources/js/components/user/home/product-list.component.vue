@@ -18,7 +18,7 @@
 
 <script>
 import CardsComponent from './cards.component.vue';
-import beefImage from '../../../../../../assets/home/foods/beef.jpg';
+import beefImage from '@assets/home/foods/beef.jpg';
 
 export default {
     name: "Product List",

@@ -6,7 +6,7 @@ import { createApp } from 'vue';
 import 'flowbite'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-import app from './components/app.vue';
+import app from './pages/app.vue';
 import router from './router'
 import Vuex from 'vuex';
 import store from './store';

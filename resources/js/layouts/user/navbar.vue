@@ -3,14 +3,14 @@
         <div class="max-w-screen-xl flex flex-wrap flex-col md:flex-row items-center justify-between mx-auto p-4 relative">
             <div class="w-full flex flex-nowrap justify-between items-center md:w-[unset]">
                 <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="../../../../assets/logo6.jpg" class="h-[100px]" alt="Love's Kitchen" />
+                    <img src="@assets/logo6.jpg" class="h-[100px]" alt="Love's Kitchen" />
                 </router-link>
 
                 <div class="flex gap-[10px]">
                     <!-- Cart -->
                     <div @click="viewCart" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px] relative" :style="`background: ${mainColorClass};`">
                         <font-awesome-icon icon="basket-shopping" size="lg" color="white" />
-                        <span v-show="cartCount > 0" class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">{{cartCount}}</span>
+                        <span v-show="cartCount > 0" class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">{{ cartCount }}</span>
                     </div>
                     <!-- Login -->
                     <router-link to="" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
@@ -38,7 +38,7 @@
                     <!-- Cart -->
                     <div @click="viewCart" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px] relative" :style="`background: ${mainColorClass};`">
                         <font-awesome-icon icon="basket-shopping" size="lg" color="white" />
-                        <span v-show="cartCount > 0" class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">{{cartCount}}</span>
+                        <span v-show="cartCount > 0" class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">{{ cartCount }}</span>
                     </div>
                     <!-- Login -->
                     <router-link to="" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
@@ -65,7 +65,7 @@
                 return this.$mainColorClass
             },
             cartCount() {
-                return this.$store.getters['cart/cartCount']
+                return this.$store.state.cartCount
             }
         },
         methods: {
@@ -84,6 +84,7 @@
             }
         },
         mounted() {
+            console.log(this.$store)
             window.addEventListener('scroll', this.handleScroll);
         },
         beforeDestroy() {

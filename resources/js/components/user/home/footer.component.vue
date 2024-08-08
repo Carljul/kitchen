@@ -13,9 +13,9 @@
                 <div class="flex flex-col items-center md:items-start">
                     <h1 class="mb-3 text-[30px]">Keep Connected</h1>
                     <ul class="flex flex-row gap-[20px] md:gap-[10px]">
-                        <li><router-link to=""><img src="../../../../../../assets/facebook.webp" alt="facebook" class="w-[30px]"></router-link></li>
-                        <li><router-link to=""><img src="../../../../../../assets/tiktok.webp" alt="tiktok" class="w-[30px]"></router-link></li>
-                        <li><router-link to=""><img src="../../../../../../assets/twitter.jpg" alt="twitter" class="w-[30px]"></router-link></li>
+                        <li><router-link to=""><img src="@assets/facebook.webp" alt="facebook" class="w-[30px]"></router-link></li>
+                        <li><router-link to=""><img src="@assets/tiktok.webp" alt="tiktok" class="w-[30px]"></router-link></li>
+                        <li><router-link to=""><img src="@assets/twitter.jpg" alt="twitter" class="w-[30px]"></router-link></li>
                     </ul>
                 </div>
                 <div class="flex flex-col items-center md:items-start mt-[20px] md:mt-0">

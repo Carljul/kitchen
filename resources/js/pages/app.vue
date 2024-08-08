@@ -7,5 +7,5 @@
 
 
 <script setup>
-import navbar from './layouts/user/navbar.vue'
+import navbar from '@layouts/user/navbar.vue'
 </script>

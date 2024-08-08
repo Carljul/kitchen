@@ -8,7 +8,7 @@
                     <p><router-link to="" class="underline">Find out more!</router-link></p>
                 </div>
                 <div class="w-[200px]">
-                    <img src="../../../../../../assets/chef.jpg" alt="Chef" class="rounded-lg">
+                    <img src="@assets/chef.jpg" alt="Chef" class="rounded-lg">
                 </div>
             </div>
         </div>

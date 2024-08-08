@@ -21,6 +21,9 @@
 </template>
 
 <script>
+import { ACTIONS } from '@library/actions';
+import { mapActions } from 'vuex';
+
 export default {
     props: {
         item: {
@@ -33,10 +36,11 @@ export default {
         }
     },
     methods: {
+        ...mapActions({addToCart: ACTIONS.CART.addToCart}),
         addItem(event, product) {
             event.preventDefault();
-            this.$store.dispatch('cart/addToCart', product)
-            this.$toast.success('Food added to cart')
+            this.addToCart({ product })
+            // this.$toast.success('Food added to cart')
         }
     }
 }
