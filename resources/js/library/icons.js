@@ -8,7 +8,8 @@ import {
     faMagnifyingGlass,
     faArrowRight,
     faAdd,
-    faUserAlt
+    faUserAlt,
+    faLocationDot
 } from '@fortawesome/free-solid-svg-icons';
 
 // Add icons to the library
@@ -22,4 +23,5 @@ library.add(
     faArrowRight,
     faAdd,
     faUserAlt,
+    faLocationDot,
 );

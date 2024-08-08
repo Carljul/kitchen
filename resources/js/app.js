@@ -27,7 +27,6 @@ const toastSettings = {
 // Utilities
 import './library/icons'
 import Conts from './library/const'
-import Utilities from './library/utils'
 
 
 createApp(app)
@@ -35,7 +34,6 @@ createApp(app)
     .use(Vuex)
     .use(store)
     .use(Conts)
-    .use(Utilities)
     .use(Toast, toastSettings)
     .component('font-awesome-icon', FontAwesomeIcon)
     .mount('#app')

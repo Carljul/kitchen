@@ -185,9 +185,6 @@ export default {
         jumboFontClass() {
             return this.$jumboFont
         },
-        containerClass() {
-            return this.$containerClass
-        },
         bundleProducts() {
             return this.bundleProducts;
         },

@@ -1,31 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
-
-import home from '../pages/user/Home.page.vue';
-import about from '../pages/user/About.page.vue';
-import productDetail from '../pages/user/ProductDetail.page.vue';
-import notFound from '../pages/NotFoundPage.vue';
+import userRouter from './user'
+import adminRouter from './admin'
 
 const routes = [
-    {
-        path: '/',
-        component: home
-    },
-    {
-        path: '/about',
-        component: about
-    },
-    {
-        path: '/products',
-        component: productDetail
-    },
-    {
-        path: '/products/:id',
-        component: productDetail
-    },
-    {
-        path: '/:pathMatch(.*)*',
-        component: notFound
-    },
+    ...userRouter,
+    ...adminRouter
 ]
 
 const router = createRouter({

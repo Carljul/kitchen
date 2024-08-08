@@ -8,10 +8,10 @@
 
                 <div class="flex gap-[10px]">
                     <!-- Cart -->
-                    <div @click="viewCart" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px] relative" :style="`background: ${mainColorClass};`">
+                    <router-link to="/cart" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px] relative" :style="`background: ${mainColorClass};`">
                         <font-awesome-icon icon="basket-shopping" size="lg" color="white" />
                         <span v-show="cartCount > 0" class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">{{ cartCount }}</span>
-                    </div>
+                    </router-link>
                     <!-- Login -->
                     <router-link to="" class="block md:hidden cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
                         <span class="hidden md:block">Login / Signup</span>
@@ -36,10 +36,10 @@
                     </div>
 
                     <!-- Cart -->
-                    <div @click="viewCart" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px] relative" :style="`background: ${mainColorClass};`">
+                    <router-link to="/cart" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px] relative" :style="`background: ${mainColorClass};`">
                         <font-awesome-icon icon="basket-shopping" size="lg" color="white" />
                         <span v-show="cartCount > 0" class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">{{ cartCount }}</span>
-                    </div>
+                    </router-link>
                     <!-- Login -->
                     <router-link to="" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
                         Login / Signup
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+    import { ACTIONS } from '@library/actions';
     export default {
         data () {
             return {
@@ -65,7 +66,10 @@
                 return this.$mainColorClass
             },
             cartCount() {
-                return this.$store.state.cartCount
+                return this.$store.getters[ACTIONS.CART.gettersCartCount]
+            },
+            testing(){
+                return ACTIONS.CART.addToCart
             }
         },
         methods: {
@@ -81,10 +85,13 @@
                     const scrollTop = window.scrollY || document.documentElement.scrollTop;
                     this.isVisible = scrollTop < 200;
                 }
+            },
+            initializeCart() {
+                this.$store.dispatch(ACTIONS.CART.initializeCart)
             }
         },
         mounted() {
-            console.log(this.$store)
+            this.initializeCart()
             window.addEventListener('scroll', this.handleScroll);
         },
         beforeDestroy() {

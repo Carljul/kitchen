@@ -1,5 +1,10 @@
 export const ACTIONS = {
     CART: {
-        addToCart: 'cart/addToCart'
+        // Actions
+        addToCart: 'cart/addToCart',
+        initializeCart: 'cart/initializeCart',
+        removeItemToCart: 'cart/removeItemToCart',
+        // Getters
+        gettersCartCount: 'cart/cartCount'
     }
 }
