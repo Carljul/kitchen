@@ -4,7 +4,7 @@
         <div class="flex-1 flex flex-col p-3">
             <div class="flex-1 flex flex-col">
                 <p class="font-semibold">{{ item.name }}</p>
-                <small class="text-[12px] truncate-text">{{ item.description }}</small>
+                <small class="text-[12px] truncate-text">{{ item.shortDescription }}</small>
                 <div class="flex gap-[10px] items-center">
                     <small class="text-[10px] font-bold text-slate-600"><s>P{{item.comparePrice.toFixed(2)}}</s></small>
                     <small class="text-[12px] font-bold">P{{item.price.toFixed(2)}}</small>
@@ -12,7 +12,7 @@
                 <hr>
                 <!-- Bundles -->
                 <ul class="list-disc ml-4">
-                    <li v-for="product in item.bundle">
+                    <li v-for="product in item.dishes">
                         {{ product.name }}
                         <small class="text-blue-950">{{ product.dishNote }}</small>
                         <small class="text-blue-950" v-for="variant in product.variants">{{ variant }},</small>
@@ -21,14 +21,20 @@
             </div>
 
              <div class="flex justify-around items-center mt-2 md:mt-0">
-                 <button class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to Order</button>
-                 <button class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Check out now!</button>
+                <button
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    @click.stop="(e) => addItem(e, item)"
+                >Add to Order</button>
+                <button class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Check out now!</button>
              </div>
         </div>
     </router-link>
 </template>
 
 <script>
+import { ACTIONS } from '@library/actions';
+import { mapActions } from 'vuex';
+
 export default {
     props: {
         item: {
@@ -38,6 +44,14 @@ export default {
         goPath: {
             type: String,
             reqiured: false
+        }
+    },
+    methods: {
+        ...mapActions({addToCart: ACTIONS.CART.addToCart}),
+        addItem(event, product) {
+            event.preventDefault();
+            this.addToCart({ product })
+            // this.$toast.success('Food added to cart')
         }
     }
 }

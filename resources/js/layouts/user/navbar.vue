@@ -66,7 +66,7 @@
                 return this.$mainColorClass
             },
             cartCount() {
-                return this.$store.getters[ACTIONS.CART.gettersCartCount]
+                return this.$store.getters[ACTIONS.CART.getCartCount]
             },
             testing(){
                 return ACTIONS.CART.addToCart

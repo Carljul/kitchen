@@ -11,7 +11,7 @@
             </button>
         </div>
         <div class="flex flex-col">
-            <small class="text-[12px] truncate-text">{{ item.description }}</small>
+            <small class="text-[12px] truncate-text">{{ item.shortDescription }}</small>
             <div class="flex gap-[10px] items-center">
                 <small class="text-[10px] font-bold text-slate-600"><s>P{{item.comparePrice.toFixed(2)}}</s></small>
                 <small class="text-[12px] font-bold">P{{item.price.toFixed(2)}}</small>

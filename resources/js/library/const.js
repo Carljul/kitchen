@@ -4,5 +4,6 @@ export default {
         app.config.globalProperties.$mainColorClass = '#0196b0';
         app.config.globalProperties.$mainColorClassFade = '#ebfcff';
         app.config.globalProperties.$jumboFont = '2.57142857rem';
+        app.config.globalProperties.$defaultDeliveryFee = 80;
     }
 }

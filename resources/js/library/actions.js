@@ -5,6 +5,8 @@ export const ACTIONS = {
         initializeCart: 'cart/initializeCart',
         removeItemToCart: 'cart/removeItemToCart',
         // Getters
-        gettersCartCount: 'cart/cartCount'
+        getCartCount: 'cart/cartCount',
+        getCartItems: 'cart/cartItems',
+        getCartsTotal: 'cart/cartsTotal'
     }
 }

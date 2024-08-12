@@ -50,7 +50,7 @@ export default {
             return this.$containerClass
         },
         cartCount() {
-            return this.$store.getters[ACTIONS.CART.gettersCartCount]
+            return this.$store.getters[ACTIONS.CART.getCartCount]
         }
     },
 
