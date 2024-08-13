@@ -1,11 +1,71 @@
 import beefImage from '@assets/home/foods/beef.jpg';
 import bundle1 from '@assets/food-bundle/bundle1.jpeg';
 import bundle2 from '@assets/food-bundle/bundle2.jpg';
+
+export const Categories = [
+    {
+        "id": 1,
+        "category": "Pork",
+        "isBundle": false
+    },
+    {
+        "id": 2,
+        "category": "Chicken",
+        "isBundle": false
+    },
+    {
+        "id": 3,
+        "category": "Seafood",
+        "isBundle": false
+    },
+    {
+        "id": 4,
+        "category": "Beef",
+        "isBundle": false
+    },
+    {
+        "id": 5,
+        "category": "Appetizer",
+        "isBundle": false
+    },
+    {
+        "id": 6,
+        "category": "Noodles",
+        "isBundle": false
+    },
+    {
+        "id": 7,
+        "category": "Dessert",
+        "isBundle": false
+    },
+    {
+        "id": 8,
+        "category": "Pork-Bundle",
+        "isBundle": true
+    },
+    {
+        "id": 9,
+        "category": "Chicken-Bundle",
+        "isBundle": true
+    },
+    {
+        "id": 10,
+        "category": "Pork-and-Chicken-Bundle",
+        "isBundle": true
+    },
+    {
+        "id": 11,
+        "category": "Pork-Chicken-and-Beef-Bundle",
+        "isBundle": true
+    },
+]
+
 export const Products = [
     {
         "id": 1,
         "name": "Humba",
-        "category": "Pork",
+        "category_id": Categories[0].id,
+        "category": Categories[0].category,
         "longDescription": "Some beautiful description",
         "shortDescription": "Some beautiful description",
         "productCode": "h4123",
@@ -20,7 +80,8 @@ export const Products = [
     {
         "id": 2,
         "name": "Adobo",
-        "category": "Chicken",
+        "category_id": Categories[1].id,
+        "category": Categories[1].category,
         "longDescription": "A savory chicken dish with a rich sauce.",
         "shortDescription": "A savory chicken dish with a rich sauce.",
         "productCode": "c5678",
@@ -35,7 +96,8 @@ export const Products = [
     {
         "id": 3,
         "name": "Sinigang",
-        "category": "Seafood",
+        "category_id": Categories[2].id,
+        "category": Categories[2].category,
         "longDescription": "A tangy and sour soup made with shrimp.",
         "shortDescription": "A tangy and sour soup made with shrimp.",
         "productCode": "s8910",
@@ -50,7 +112,8 @@ export const Products = [
     {
         "id": 4,
         "name": "Lechon",
-        "category": "Pork",
+        "category_id": Categories[0].id,
+        "category": Categories[0].category,
         "longDescription": "A whole roasted pig with crispy skin.",
         "shortDescription": "A whole roasted pig with crispy skin.",
         "productCode": "l1112",
@@ -65,7 +128,8 @@ export const Products = [
     {
         "id": 5,
         "name": "Kare-Kare",
-        "category": "Beef",
+        "category_id": Categories[3].id,
+        "category": Categories[3].category,
         "longDescription": "A rich peanut sauce stew with oxtail and vegetables.",
         "shortDescription": "A rich peanut sauce stew with oxtail and vegetables.",
         "productCode": "b1314",
@@ -80,7 +144,8 @@ export const Products = [
     {
         "id": 6,
         "name": "Lumpia",
-        "category": "Appetizer",
+        "category_id": Categories[4].id,
+        "category": Categories[4].category,
         "longDescription": "Crispy spring rolls filled with meat and vegetables.",
         "shortDescription": "Crispy spring rolls filled with meat and vegetables.",
         "productCode": "a1516",
@@ -95,7 +160,8 @@ export const Products = [
     {
         "id": 7,
         "name": "Pancit",
-        "category": "Noodles",
+        "category_id": Categories[5].id,
+        "category": Categories[5].category,
         "longDescription": "Stir-fried noodles with vegetables and meat.",
         "shortDescription": "Stir-fried noodles with vegetables and meat.",
         "productCode": "n1718",
@@ -110,7 +176,8 @@ export const Products = [
     {
         "id": 8,
         "name": "Tinola",
-        "category": "Chicken",
+        "category_id": Categories[1].id,
+        "category": Categories[1].category,
         "longDescription": "A light soup with chicken, green papaya, and ginger.",
         "shortDescription": "A light soup with chicken, green papaya, and ginger.",
         "productCode": "t1920",
@@ -125,7 +192,8 @@ export const Products = [
     {
         "id": 9,
         "name": "Caldereta",
-        "category": "Beef",
+        "category_id": Categories[3].id,
+        "category": Categories[3].category,
         "longDescription": "A hearty beef stew with tomato sauce and vegetables.",
         "shortDescription": "A hearty beef stew with tomato sauce and vegetables.",
         "productCode": "b2122",
@@ -140,7 +208,56 @@ export const Products = [
     {
         "id": 10,
         "name": "Halo-Halo",
-        "category": "Dessert",
+        "category_id": Categories[6].id,
+        "category": Categories[6].category,
+        "longDescription": "A refreshing dessert with mixed fruits, beans, and shaved ice.",
+        "shortDescription": "A refreshing dessert with mixed fruits, beans, and shaved ice.",
+        "productCode": "d2324",
+        "servingSize": 2,
+        "comparePrice": 30.00,
+        "isActivePriceCompare": true,
+        "price": 25.00,
+        "image": beefImage,
+        "dishNote": "",
+        "preparingTimeInMins": 10
+    },
+    {
+        "id": 11,
+        "name": "Halo-Halo",
+        "category_id": Categories[6].id,
+        "category": Categories[6].category,
+        "longDescription": "A refreshing dessert with mixed fruits, beans, and shaved ice.",
+        "shortDescription": "A refreshing dessert with mixed fruits, beans, and shaved ice.",
+        "productCode": "d2324",
+        "servingSize": 2,
+        "comparePrice": 30.00,
+        "isActivePriceCompare": true,
+        "price": 25.00,
+        "image": beefImage,
+        "dishNote": "",
+        "preparingTimeInMins": 10
+    },
+    {
+        "id": 12,
+        "name": "Halo-Halo",
+        "category_id": Categories[6].id,
+        "category": Categories[6].category,
+        "longDescription": "A refreshing dessert with mixed fruits, beans, and shaved ice.",
+        "shortDescription": "A refreshing dessert with mixed fruits, beans, and shaved ice.",
+        "productCode": "d2324",
+        "servingSize": 2,
+        "comparePrice": 30.00,
+        "isActivePriceCompare": true,
+        "price": 25.00,
+        "image": beefImage,
+        "dishNote": "",
+        "preparingTimeInMins": 10
+    },
+    {
+        "id": 13,
+        "name": "Halo-Halo",
+        "category_id": Categories[6].id,
+        "category": Categories[6].category,
         "longDescription": "A refreshing dessert with mixed fruits, beans, and shaved ice.",
         "shortDescription": "A refreshing dessert with mixed fruits, beans, and shaved ice.",
         "productCode": "d2324",
@@ -158,7 +275,8 @@ export const BundleProducts = [
     {
         "id": 1,
         "name": "Set A",
-        "category": "Pork",
+        "category_id": Categories[7].id,
+        "category": Categories[7].category,
         "longDescription": "Sunt veniam ut veniam sunt voluptate officia. Enim culpa Lorem id Lorem laboris. Magna est elit amet sit labore ex fugiat elit deserunt. Sint cupidatat sunt quis culpa. Nisi duis aliqua enim incididunt pariatur dolore eiusmod quis fugiat consectetur magna occaecat id. Deserunt mollit nulla adipisicing aliquip in dolor elit deserunt.",
         "shortDescription": "Some beautiful description",
         "productCode": "h4123",
@@ -182,7 +300,8 @@ export const BundleProducts = [
     {
         "id": 2,
         "name": "Set B",
-        "category": "Chicken",
+        "category_id": Categories[8].id,
+        "category": Categories[8].category,
         "longDescription": "Elit duis Lorem veniam ut esse veniam deserunt ullamco nulla voluptate occaecat velit. Consequat fugiat nisi voluptate irure voluptate fugiat proident aliquip ea minim ad velit incididunt. Enim consequat occaecat occaecat in. Aliquip cillum velit elit deserunt enim consectetur quis do sit fugiat exercitation.",
         "shortDescription": "Some beautiful description",
         "productCode": "c5678",
@@ -203,4 +322,54 @@ export const BundleProducts = [
         ],
         "additionalPreparingTimeInMins": 20
     },
+    {
+        "id": 3,
+        "name": "Set C",
+        "category_id": Categories[9].id,
+        "category": Categories[9].category,
+        "longDescription": "Elit duis Lorem veniam ut esse veniam deserunt ullamco nulla voluptate occaecat velit. Consequat fugiat nisi voluptate irure voluptate fugiat proident aliquip ea minim ad velit incididunt. Enim consequat occaecat occaecat in. Aliquip cillum velit elit deserunt enim consectetur quis do sit fugiat exercitation.",
+        "shortDescription": "Some beautiful description",
+        "productCode": "c5678",
+        "servingSize": 4,
+        "comparePrice": 49.00,
+        "isActivePriceCompare": true,
+        "price": 45.00,
+        "image": bundle2,
+        "isBundle": true,
+        "dishes": [
+            Products[3],
+            Products[4],
+            Products[5],
+            Products[6],
+            Products[7],
+            Products[8],
+            Products[9],
+        ],
+        "additionalPreparingTimeInMins": 20
+    },
+    {
+        "id": 4,
+        "name": "Set D",
+        "category_id": Categories[10].id,
+        "category": Categories[10].category,
+        "longDescription": "Elit duis Lorem veniam ut esse veniam deserunt ullamco nulla voluptate occaecat velit. Consequat fugiat nisi voluptate irure voluptate fugiat proident aliquip ea minim ad velit incididunt. Enim consequat occaecat occaecat in. Aliquip cillum velit elit deserunt enim consectetur quis do sit fugiat exercitation.",
+        "shortDescription": "Some beautiful description",
+        "productCode": "c5678",
+        "servingSize": 4,
+        "comparePrice": 49.00,
+        "isActivePriceCompare": true,
+        "price": 45.00,
+        "image": bundle2,
+        "isBundle": true,
+        "dishes": [
+            Products[5],
+            Products[6],
+            Products[7],
+            Products[8],
+            Products[9],
+            Products[10],
+            Products[11],
+        ],
+        "additionalPreparingTimeInMins": 20
+    }
 ]

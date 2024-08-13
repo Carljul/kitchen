@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="border-t-8 border-[#f24f52]">
         <div :class="containerClass">
             <div class="grid grid-cols-1 md:grid-cols-3 items-start gap-[30px] md:gap-0">
                 <div class="flex flex-col items-center md:items-start">

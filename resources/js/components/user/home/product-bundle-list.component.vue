@@ -3,14 +3,14 @@
         <div :class="containerClass">
             <div class="flex flex-col md:flex-row mb-4 md:mb-0 items-center w-full justify-between">
                 <h1 :class="`font-bold text-left my-3 md:mb-8 text-lg lg:text-[${jumboFont}]`">Eat with friends with our best food bundle!</h1>
-                <router-link to="" class="font-bold flex items-center"><h1>VIEW ALL <font-awesome-icon icon="arrow-right"/></h1></router-link>
+                <router-link to="/products/bundles" class="font-bold flex items-center"><h1>VIEW ALL <font-awesome-icon icon="arrow-right"/></h1></router-link>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-4">
                 <CardsBundleComponent
                     v-for="product in bundleProducts"
                     :key="product"
                     :item="product"
-                    :goPath="`/product/bundle/${product.id}`"
+                    :goPath="`/products/bundles/${product.id}`"
                 />
             </div>
         </div>
@@ -26,7 +26,7 @@ export default {
     name: "Product List",
     data() {
         return {
-            bundleProducts: BundleProducts
+            bundleProducts: BundleProducts.slice(0, 2)
         }
     },
     components: {

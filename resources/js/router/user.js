@@ -2,6 +2,7 @@ import home from '@pages/user/Home.page.vue';
 import about from '@pages/user/About.page.vue';
 import productDetail from '@pages/user/ProductDetail.page.vue';
 import cart from '@pages/user/Cart.page.vue'
+import productsPage from '@/pages/user/Products.page.vue';
 import notFound from '@pages/NotFoundPage.vue';
 
 const userRouter = [
@@ -15,10 +16,18 @@ const userRouter = [
     },
     {
         path: '/products',
-        component: productDetail
+        component: productsPage
     },
     {
-        path: '/products/:id',
+        path: '/products/:type',
+        component: productsPage
+    },
+    {
+        path: '/products/:type/:category',
+        component: productsPage
+    },
+    {
+        path: '/products/:type/:category/:id',
         component: productDetail
     },
     {

@@ -6,8 +6,8 @@
                 <p class="font-semibold">{{ item.name }}</p>
                 <small class="text-[12px] truncate-text">{{ item.shortDescription }}</small>
                 <div class="flex gap-[10px] items-center">
-                    <small class="text-[10px] font-bold text-slate-600"><s>P{{item.comparePrice.toFixed(2)}}</s></small>
-                    <small class="text-[12px] font-bold">P{{item.price.toFixed(2)}}</small>
+                    <small class="text-[10px] font-bold text-slate-600"><s>P{{priceFormat(item.comparePrice.toFixed(2))}}</s></small>
+                    <small class="text-[12px] font-bold">P{{priceFormat(item.price.toFixed(2))}}</small>
                 </div>
                 <hr>
                 <!-- Bundles -->
@@ -34,6 +34,7 @@
 <script>
 import { ACTIONS } from '@library/actions';
 import { mapActions } from 'vuex';
+import { numberWithCommas } from '@library/utils';
 
 export default {
     props: {
@@ -52,6 +53,9 @@ export default {
             event.preventDefault();
             this.addToCart({ product })
             // this.$toast.success('Food added to cart')
+        },
+        priceFormat(x) {
+            return numberWithCommas(x)
         }
     }
 }
