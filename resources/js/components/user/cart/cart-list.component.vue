@@ -8,15 +8,15 @@
                 v-for="items in cartItems"
             >
                 <div class="w-[80px] md:w-[200px] h-[55px] md:h-[135px] overflow-hidden rounded-md flex-[0.2]">
-                    <img :src="items.product.image" :alt="items.product.name" class="object-contain">
+                    <img :src="items.image" :alt="items.name" class="object-contain">
                 </div>
                 <div class="flex-[0.4] md:flex-[0.6]">
-                    <span class="font-bold">{{items.product.name}}</span>
+                    <span class="font-bold">{{items.name}}</span>
                     <div class="hidden md:grid grid-cols-3">
-                        <span v-for="product in items.product.dishes" class="border-[1px] border-slate-300 px-2 mr-2 rounded-md py-1 my-2 bg-white">{{ product.name }}</span>
+                        <span v-for="product in items.dishes" class="border-[1px] border-slate-300 px-2 mr-2 rounded-md py-1 my-2 bg-white">{{ product.name }}</span>
                     </div>
-                    <p v-show="!items.product.isBundle" class="hidden md:block">{{ items.product.longDescription }}</p>
-                    <p class="block md:hidden">{{ items.product.shortDescription }}</p>
+                    <p v-show="!items.isBundle" class="hidden md:block">{{ items.longDescription }}</p>
+                    <p class="block md:hidden">{{ items.shortDescription }}</p>
                 </div>
                 <div class="flex-[0.2] md:flex-[0.1]">
                     <div class="flex justify-between md:justify-evenly gap-0 md:gap-[10px] flex-col md:flex-row items-center">

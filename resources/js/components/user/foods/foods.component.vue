@@ -1,6 +1,6 @@
 <template>
     <router-link :to='goPath' class="bg-white w-[120px] md:w-[200px] rounded-md">
-        <img :src="item.image" :alt="item.name" class="w-full h-[135px] rounded-t-md object-cover">
+        <img :src="item.image" :alt="item.name" class="w-full h-[100px] md:h-[135px] rounded-t-md object-cover">
         <div class="flex flex-row relative px-2 pt-2">
             <p class="font-semibold">{{ item.name }}</p>
             <button
@@ -38,6 +38,7 @@ export default {
     methods: {
         ...mapActions({addToCart: ACTIONS.CART.addToCart}),
         addItem(event, product) {
+            console.log(['product', product])
             event.preventDefault();
             this.addToCart({ product })
             // this.$toast.success('Food added to cart')

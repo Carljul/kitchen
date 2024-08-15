@@ -5,3 +5,7 @@
 .link.active {
     color: #3b82f6;
 }
+
+.link.active>* {
+    color: #3b82f6;
+}

@@ -21,7 +21,7 @@ const actions = {
         cart = cart.map((item) => {
             return {
                 ...item,
-                subTotal: item.product.price * item.quantity
+                subTotal: item.price * item.quantity
             }
         })
 
@@ -34,22 +34,22 @@ const actions = {
 
         if (sessionStorage.getItem('love_cart') !== null) {
             cart = JSON.parse(sessionStorage.getItem('love_cart'))
-            let isBundle = product.product.isBundle
+            let isBundle = 'isBundle' in product ? product.isBundle : false
             let findItemIndex = isBundle
-                ? cart.findIndex((item) => item.product.id == product.product.id && item.product.isBundle == true)
-                : cart.findIndex((item) => item.product.id == product.product.id)
+                ? cart.findIndex((item) => item.id == product.id && item.isBundle == true)
+                : cart.findIndex((item) => item.id == product.id)
 
             if (findItemIndex !== -1) {
                 if (quantity > 0) {
                     let currentQuantity = quantity
                     // If there is quantity provided
                     cart[findItemIndex].quantity = currentQuantity
-                    cart[findItemIndex].subTotal = cart[findItemIndex].product.price * currentQuantity
+                    cart[findItemIndex].subTotal = cart[findItemIndex].price * currentQuantity
                 } else {
                     let currentQuantity = cart[findItemIndex].quantity + 1
                     // if there is no quantity provided but clicked add to cart
                     cart[findItemIndex].quantity = currentQuantity
-                    cart[findItemIndex].subTotal = cart[findItemIndex].product.price * currentQuantity
+                    cart[findItemIndex].subTotal = cart[findItemIndex].price * currentQuantity
                 }
             } else {
                 if (quantity > 0) {
@@ -57,14 +57,14 @@ const actions = {
                     cart.push({
                         ...product,
                         quantity: quantity,
-                        subTotal: product.product.price * quantity
+                        subTotal: product.price * quantity
                     })
                 } else {
                     // if there is no quantity provided but clicked add to cart
                     cart.push({
                         ...product,
                         quantity: 1,
-                        subTotal: product.product.price
+                        subTotal: product.price
                     })
                 }
             }

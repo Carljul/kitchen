@@ -10,7 +10,7 @@
                     v-for="product in bundleProducts"
                     :key="product"
                     :item="product"
-                    :goPath="`/products/bundles/${product.id}`"
+                    :goPath="`/products/bundles/${cleanCategorySlug(product.category)}/${product.id}`"
                 />
             </div>
         </div>
@@ -19,6 +19,7 @@
 
 
 <script>
+import { cleanString } from '@library/utils.js'
 import { BundleProducts } from '../../../mock/product';
 import CardsBundleComponent from './cards-bundle.component.vue';
 
@@ -47,6 +48,11 @@ export default {
         },
         mainColorClassFade() {
             return this.$mainColorClassFade
+        },
+    },
+    methods: {
+        cleanCategorySlug(category) {
+            return cleanString(category)
         },
     }
 }

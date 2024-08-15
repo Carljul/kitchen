@@ -12,7 +12,9 @@ import {
     faLocationDot,
     faPesoSign,
     faTrash,
-    faMinus
+    faMinus,
+    faChevronUp,
+    faChevronDown
 } from '@fortawesome/free-solid-svg-icons';
 
 // Add icons to the library
@@ -29,5 +31,7 @@ library.add(
     faLocationDot,
     faPesoSign,
     faTrash,
-    faMinus
+    faMinus,
+    faChevronUp,
+    faChevronDown
 );

@@ -5,16 +5,19 @@
         </div>
     </div>
     <FooterLayout />
+    <FooterNavigation />
 </template>
 
 <script>
 import ProductListComponent from '@components/user/foods/product-list.component.vue';
-import FooterLayout from '@layouts/user/footer.layout.vue'
+import FooterLayout from '@layouts/user/footer.layout.vue';
+import FooterNavigation from '@layouts/user/footer.navigation.vue'
 
 export default {
     components: {
         ProductListComponent,
-        FooterLayout
+        FooterLayout,
+        FooterNavigation,
     },
     computed: {
         containerClass() {

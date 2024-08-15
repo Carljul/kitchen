@@ -7,7 +7,7 @@
                 v-for="product in products"
                 :key="product"
                 :item="product"
-                :goPath="`/products/foods/${product.id}`"
+                :goPath="`/products/foods/${cleanCategorySlug(product.category)}/${product.id}`"
             />
         </div>
         <div class="flex w-full justify-center mt-6">
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import {cleanString} from '@/library/utils.js'
 import { Products } from '../../../mock/product';
 import CardsComponent from './cards.component.vue';
 
@@ -46,6 +47,11 @@ export default {
         products() {
             return this.products;
         }
+    },
+    methods: {
+        cleanCategorySlug(category) {
+            return cleanString(category)
+        },
     }
 }
 </script>
