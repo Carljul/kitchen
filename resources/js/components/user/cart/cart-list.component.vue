@@ -28,14 +28,20 @@
                     </div>
                 </div>
                 <div class="flex-[0.2] md:flex-[0.1]">
-                    <div class="border-[1px] border-slate-300 rounded-md flex items-center">
+                    <div class="border-[1px] border-slate-300 rounded-md flex items-center w-fit">
                         <button
                             class="p-2 text-[15px] font-bold"
                             @click="updateCart(items, items.quantity - 1)"
                         >
                             <font-awesome-icon icon="minus" />
                         </button>
-                        <input type="number" class="w-[30px] text-center" min="1" :value="items.quantity">
+                        <input
+                            type="number"
+                            class="w-[30px] text-center"
+                            min="1"
+                            :value="items.quantity"
+                            @change="(e) => updateCart(items, e.target.value)"
+                        >
                         <button
                             class="p-2 text-[15px] font-bold"
                             @click="updateCart(items, items.quantity + 1)"

@@ -5,5 +5,7 @@ export default {
         app.config.globalProperties.$mainColorClassFade = '#ebfcff';
         app.config.globalProperties.$jumboFont = '2.57142857rem';
         app.config.globalProperties.$defaultDeliveryFee = 80;
+        app.config.globalProperties.$foodType = 'foods';
+        app.config.globalProperties.$bundleType = 'bundles';
     }
 }
