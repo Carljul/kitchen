@@ -38,10 +38,9 @@ export default {
     methods: {
         ...mapActions({addToCart: ACTIONS.CART.addToCart}),
         addItem(event, product) {
-            console.log(['product', product])
             event.preventDefault();
             this.addToCart({ product })
-            // this.$toast.success('Food added to cart')
+            this.$toast.success(this.$FoodToCart)
         }
     }
 }

@@ -55,23 +55,8 @@
 
             <div id="scrollable" class="flex-[0.2] h-auto md:h-[322px] w-full overflow-x-scroll md:overflow-y-scroll">
                 <ul class="flex flex-row md:flex-col gap-[10px]">
-                    <li class="w-full h-[54px] shadow-sm rounded-md bg-white flex items-center border-b-2 md:border-b-0 md:border-l-4 border-orange-700">
-                        <router-link to="#" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">Beef</router-link>
-                    </li>
-                    <li class="w-full h-[54px] shadow-sm rounded-md bg-white flex items-center border-b-2 md:border-b-0 md:border-l-4 border-green-700">
-                        <router-link to="#" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">Chicken</router-link>
-                    </li>
-                    <li class="w-full h-[54px] shadow-sm rounded-md bg-white flex items-center border-b-2 md:border-b-0 md:border-l-4 border-blue-700">
-                        <router-link to="#" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">Pork</router-link>
-                    </li>
-                    <li class="w-full h-[54px] shadow-sm rounded-md bg-white flex items-center border-b-2 md:border-b-0 md:border-l-4 border-yellow-700">
-                        <router-link to="#" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">Pasta</router-link>
-                    </li>
-                    <li class="w-full h-[54px] shadow-sm rounded-md bg-white flex items-center border-b-2 md:border-b-0 md:border-l-4 border-grey-700">
-                        <router-link to="#" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">Pastries</router-link>
-                    </li>
-                    <li class="w-full h-[54px] shadow-sm rounded-md bg-white flex items-center border-b-2 md:border-b-0 md:border-l-4 border-orange-700">
-                        <router-link to="#" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">Vegetables</router-link>
+                    <li v-for="category in categories" :class="`w-full h-[54px] shadow-sm rounded-md bg-white flex items-center border-b-2 md:border-b-0 md:border-l-4 border-${category.color}-700`">
+                        <router-link :to="category.isBundle ? `/products/bundles/${cleanCategorySlug(category.category)}`:`/products/foods/${cleanCategorySlug(category.category)}`" class="w-[120px] md:w-full flex flex-1 px-3 h-full items-center">{{ cleanCategoryRead(category.category) }}</router-link>
                     </li>
                 </ul>
             </div>
@@ -80,13 +65,28 @@
 </template>
 
 <script>
+import {cleanString, readableString} from '@/library/utils.js'
+import { Categories } from '../../../mock/product';
 export default {
   name: 'Carousel Component',
+  data() {
+    return {
+        categories: Categories
+    }
+  },
   computed: {
     mainColorClassFade() {
         return this.$mainColorClassFade
     }
-  }
+  },
+methods: {
+    cleanCategorySlug(category) {
+        return cleanString(category)
+    },
+    cleanCategoryRead(category) {
+        return readableString(category)
+    },
+}
 }
 </script>
 

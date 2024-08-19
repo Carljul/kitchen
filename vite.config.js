@@ -11,9 +11,6 @@ export default defineConfig({
         }),
         vue(),
     ],
-    optimizeDeps: {
-        include: ['vue-toastification']
-    },
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'resources/js'),

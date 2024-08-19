@@ -52,7 +52,7 @@ export default {
         addItem(event, product) {
             event.preventDefault();
             this.addToCart({ product })
-            // this.$toast.success('Food added to cart')
+            this.$toast.success(this.$FoodToCart)
         },
         priceFormat(x) {
             return numberWithCommas(x)

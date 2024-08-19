@@ -12,17 +12,7 @@ import Vuex from 'vuex';
 import store from './store';
 
 // Toaster
-import Toast, { POSITION } from 'vue-toastification';
-import 'vue-toastification/dist/index.css';
-const toastSettings = {
-    position: POSITION.BOTTOM_RIGHT,
-    timeout: 5000,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    draggablePercent: 0.6,
-    showCloseButton: true
-}
+import Toaster from "@meforma/vue-toaster";
 
 // Utilities
 import './library/icons'
@@ -34,6 +24,10 @@ createApp(app)
     .use(Vuex)
     .use(store)
     .use(Conts)
-    .use(Toast, toastSettings)
+    .use(Toaster, {
+        position: "top-right",
+        dismissible: true,
+        duration: 1000
+    })
     .component('font-awesome-icon', FontAwesomeIcon)
     .mount('#app')

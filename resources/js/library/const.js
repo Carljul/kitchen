@@ -7,5 +7,6 @@ export default {
         app.config.globalProperties.$defaultDeliveryFee = 80;
         app.config.globalProperties.$foodType = 'foods';
         app.config.globalProperties.$bundleType = 'bundles';
+        app.config.globalProperties.$FoodToCart = 'Food added to cart'
     }
 }

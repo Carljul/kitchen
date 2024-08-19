@@ -6,57 +6,68 @@ export const Categories = [
     {
         "id": 1,
         "category": "Pork",
-        "isBundle": false
+        "isBundle": false,
+        "color": "orange"
     },
     {
         "id": 2,
         "category": "Chicken",
-        "isBundle": false
+        "isBundle": false,
+        "color": "green"
     },
     {
         "id": 3,
         "category": "Seafood",
-        "isBundle": false
+        "isBundle": false,
+        "color": "blue"
     },
     {
         "id": 4,
         "category": "Beef",
-        "isBundle": false
+        "isBundle": false,
+        "color": "yellow"
     },
     {
         "id": 5,
         "category": "Appetizer",
-        "isBundle": false
+        "isBundle": false,
+        "color": "gray"
     },
     {
         "id": 6,
         "category": "Noodles",
-        "isBundle": false
+        "isBundle": false,
+        "color": "red"
     },
     {
         "id": 7,
         "category": "Dessert",
-        "isBundle": false
+        "isBundle": false,
+        "color": "indigo"
     },
     {
         "id": 8,
         "category": "Pork-Bundle",
-        "isBundle": true
+        "isBundle": true,
+        "color": "purple"
     },
     {
         "id": 9,
         "category": "Chicken-Bundle",
-        "isBundle": true
+        "isBundle": true,
+        "color": "black"
     },
     {
         "id": 10,
         "category": "Pork-and-Chicken-Bundle",
-        "isBundle": true
+        "isBundle": true,
+        "color": "slate"
     },
     {
         "id": 11,
         "category": "Pork-Chicken-and-Beef-Bundle",
-        "isBundle": true
+        "isBundle": true,
+        "color": "violet"
     },
 ]
 
