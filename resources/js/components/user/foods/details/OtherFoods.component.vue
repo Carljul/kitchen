@@ -1,5 +1,11 @@
 <template>
-    <div :class="`${containerClass} mx-auto my-3 overflow-hidden`" @touchstart="startTouch" @touchmove="moveTouch" @touchend="endTouch">
+    <div
+        v-show="carouselItems.length > 0"
+        :class="`${containerClass} mx-auto my-3 overflow-hidden`"
+        @touchstart="startTouch"
+        @touchmove="moveTouch"
+        @touchend="endTouch"
+    >
         <h1 class="mb-3 font-bold text-[20px]">Other Foods you might want!</h1>
         <div class="flex justify-center">
             <div id="recipeCarousel" class="relative w-full">
@@ -101,7 +107,16 @@ export default {
         },
         otherProducts() {
             let products = [...Products, ...BundleProducts]
+            let id = this.$route.params.id;
+            let isBundle = this.$route.params.type == this.$bundleType;
+
+            // Filter out same product with the current display
+            products = products.filter((item) => item.id != id && item.isBundle != isBundle)
+
+            // Shuffle the items
             products = this.shuffleArray(products)
+
+            // Get only 9 products to display
             products = products.slice(0, 9)
             this.carouselItems = products
         },

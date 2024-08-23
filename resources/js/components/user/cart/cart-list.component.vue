@@ -105,7 +105,7 @@
                         </span>
                     </div>
                 </div>
-                <button class="mt-5 uppercase w-full p-[10px] text-[15px] font-bold bg-blue-800 text-white rounded-md text-center">Checkout</button>
+                <router-link to="/checkout" class="block mt-5 uppercase w-full p-[10px] text-[15px] font-bold bg-blue-800 text-white rounded-md text-center">Checkout</router-link>
             </div>
         </div>
         <div v-show="cartItems.length == 0" class="flex flex-col gap-[10px] items-center">

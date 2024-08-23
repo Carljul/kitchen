@@ -1,18 +1,19 @@
-import home from '@pages/user/Home.page.vue';
-import about from '@pages/user/About.page.vue';
-import productDetail from '@pages/user/ProductDetail.page.vue';
-import cart from '@pages/user/Cart.page.vue'
-import productsPage from '@/pages/user/Products.page.vue';
+import homePage from '@pages/user/Home.page.vue';
+import aboutPage from '@pages/user/About.page.vue';
+import productDetailPage from '@pages/user/ProductDetail.page.vue';
+import cartPage from '@pages/user/Cart.page.vue'
+import productsPage from '@pages/user/Products.page.vue';
+import checkoutPage from '@pages/user/Checkout.page.vue'
 import notFound from '@pages/NotFoundPage.vue';
 
 const userRouter = [
     {
         path: '/',
-        component: home
+        component: homePage
     },
     {
         path: '/about',
-        component: about
+        component: aboutPage
     },
     {
         path: '/products',
@@ -28,11 +29,15 @@ const userRouter = [
     },
     {
         path: '/products/:type/:category/:id',
-        component: productDetail
+        component: productDetailPage
     },
     {
         path: '/cart',
-        component: cart
+        component: cartPage
+    },
+    {
+        path: '/checkout',
+        component: checkoutPage
     },
     {
         path: '/:pathMatch(.*)*',
