@@ -5,6 +5,8 @@ import cartPage from '@pages/user/Cart.page.vue'
 import productsPage from '@pages/user/Products.page.vue';
 import checkoutPage from '@pages/user/Checkout.page.vue'
 import notFound from '@pages/NotFoundPage.vue';
+import LoginPage from '../pages/user/Login.page.vue';
+import SignupPage from '../pages/user/Signup.page.vue';
 
 const userRouter = [
     {
@@ -38,6 +40,14 @@ const userRouter = [
     {
         path: '/checkout',
         component: checkoutPage
+    },
+    {
+        path: '/login',
+        component: LoginPage
+    },
+    {
+        path: '/signup',
+        component: SignupPage
     },
     {
         path: '/:pathMatch(.*)*',

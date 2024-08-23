@@ -41,7 +41,7 @@
                         <span v-show="cartCount > 0" class="absolute bg-red-800 text-white text-[12px] w-[15px] h-[15px] rounded-lg text-center right-0 leading-none pt-[2px]">{{ cartCount }}</span>
                     </router-link>
                     <!-- Login -->
-                    <router-link to="" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
+                    <router-link to="/login" class="hidden md:block cursor-pointer rounded-md px-[8px] py-[5px] border-[1px] border-gray-300 whitespace-nowrap">
                         Login / Signup
                     </router-link>
                 </div>

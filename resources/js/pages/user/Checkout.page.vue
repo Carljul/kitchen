@@ -178,8 +178,8 @@ import {ACTIONS} from '@library/actions.js'
 import {numberWithCommas} from '@library/utils'
 import FooterNavigation from '@layouts/user/footer.navigation.vue'
 import FooterComponent from '@layouts/user/footer.layout.vue'
-import ModalDialog from '../../components/common/modal-dialog.vue'
-import { ModalTransactionTypes } from '../../library/enums'
+import ModalDialog from '@components/common/modal-dialog.vue'
+import { ModalTransactionTypes } from '@library/enums'
 
 export default {
     data() {
