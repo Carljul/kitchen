@@ -27,3 +27,16 @@ export function convertMinutes(mins) {
         return result;
     }
 }
+
+export function isValidPhoneNumber(phoneNumber) {
+    // Regular expression for Philippines mobile numbers
+    const regexLocal = /^09\d{9}$/;          // Matches numbers like 09123456789
+    const regexInternational = /^\+639\d{9}$/;  // Matches numbers like +639123456789
+
+    // Test against the regular expressions
+    if (regexLocal.test(phoneNumber) || regexInternational.test(phoneNumber)) {
+        return true; // Valid phone number
+    } else {
+        return false; // Invalid phone number
+    }
+}

@@ -40,17 +40,41 @@
         @close="handleCancel"
         @confirm="handleConfirm"
     >
-        <form>
+        <form @submit="handleConfirm" autocomplete="off">
             <div class="mb-5">
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your mobile number</label>
-                <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="+639123456789" required />
+                <div class="flex flex-col gap-[10px]">
+                    <input
+                        type="tel"
+                        id="tel"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        placeholder="+639123456789"
+                        required
+                        autocomplete="off"
+                        v-model="phoneNumber"
+                        @keypress="phoneNumberChange"
+                    />
+                    <small v-show="!isPhoneNumberValid" class="border-[1px] border-red-800 py-1 px-3 text-red-800 bg-red-100 rounded-md">{{phoneNumberErrorMessage}}</small>
+                </div>
             </div>
             
             <div class="flex items-start mb-5">
                 <div class="flex items-center h-5">
-                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                    <input
+                        id="remember"
+                        type="checkbox"
+                        :value="isCheckedTerms"
+                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                        v-model="isCheckedTerms"
+                    />
                 </div>
-                <label for="remember" class="ms-2 text-sm font-medium text-gray-500">By creating and/or using your account, you agree to our <router-link to="/terms" class="text-blue-800 hover:underline">Terms of Use</router-link> and <router-link to="/privacy-policy" class="text-blue-800 hover:underline">Privacy Policy</router-link>.</label>
+                <div class="flex flex-col">
+                    <label for="remember" class="ms-2 text-sm font-medium text-gray-500">
+                        By creating and/or using your account, you agree to our
+                        <router-link to="/terms" class="text-blue-800 hover:underline">Terms of Conditions</router-link>.
+                    </label>
+                    <small v-show="!isCheckedTerms && isCheckedTermsError" class="border-[1px] border-red-800 py-1 px-3 text-red-800 bg-red-100 rounded-md">You must accept the terms and conditions to register an account</small>
+                </div>
             </div>
         </form>
     </ModalDialog>
@@ -61,11 +85,18 @@
 import FooterNavigation from '@layouts/user/footer.navigation.vue';
 import FooterComponent from '@layouts/user/footer.layout.vue';
 import ModalDialog from '@components/common/modal-dialog.vue'
+import { isValidPhoneNumber } from  '@library/utils'
+
 export default {
-    name: 'Cart',
+    name: 'Login',
     data() {
         return {
-            showDialog: false
+            showDialog: false,
+            isCheckedTerms: false,
+            isCheckedTermsError: false,
+            isPhoneNumberValid: true,
+            phoneNumber: '',
+            phoneNumberErrorMessage: this.$phoneNumberErrorMessage
         }
     },
     components: {
@@ -77,14 +108,42 @@ export default {
         containerClass() {
             return this.$containerClass
         },
+    },
+    methods: {
         signUp() {
             this.showDialog = true
         },
         handleCancel() {
             this.showDialog = false
         },
-        handleConfirm() {
+        handleConfirm(e) {
+            if (e !== undefined) {
+                e.preventDefault()
+            }
+
+            if (this.phoneNumber == '') {
+                this.isPhoneNumberValid = false
+                this.phoneNumberErrorMessage = 'Mobile number is required'
+                return
+            }
+
+            if (!isValidPhoneNumber(this.phoneNumber)) {
+                this.isPhoneNumberValid = false
+                this.phoneNumberErrorMessage= this.$phoneNumberErrorMessage
+                return
+            }
+
+            if (!this.isCheckedTerms) {
+                this.isCheckedTermsError = true
+                return
+            }
+
+
+            this.$router.push({path: '/signup', query: {mobile: this.phoneNumber}})
             this.showDialog = false
+        },
+        phoneNumberChange(e) {
+            this.isPhoneNumberValid = true
         }
     }
 }

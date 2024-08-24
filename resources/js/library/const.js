@@ -8,5 +8,6 @@ export default {
         app.config.globalProperties.$foodType = 'foods';
         app.config.globalProperties.$bundleType = 'bundles';
         app.config.globalProperties.$FoodToCart = 'Food added to cart'
+        app.config.globalProperties.$phoneNumberErrorMessage = 'Please enter a valid mobile number, e.g. (+639123456789 / 09123456789)'
     }
 }
