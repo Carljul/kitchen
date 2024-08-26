@@ -14,7 +14,10 @@ import {
     faTrash,
     faMinus,
     faChevronUp,
-    faChevronDown
+    faChevronDown,
+    faBars,
+    faWarehouse,
+    faChartArea
 } from '@fortawesome/free-solid-svg-icons';
 
 // Add icons to the library
@@ -33,5 +36,8 @@ library.add(
     faTrash,
     faMinus,
     faChevronUp,
-    faChevronDown
+    faChevronDown,
+    faBars,
+    faWarehouse,
+    faChartArea
 );

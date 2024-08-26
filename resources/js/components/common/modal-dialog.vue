@@ -1,11 +1,11 @@
 <template>
     <div v-if="isVisible" class="popup-dialog-overlay">
-      <div class="popup-dialog">
+      <div :class="`popup-dialog ${dialogClass}`">
         <div class="popup-dialog-header">
           <h3>{{ title }}</h3>
           <button class="close-button" @click="close">&times;</button>
         </div>
-        <div class="popup-dialog-body">
+        <div :class="`popup-dialog-body ${dialogBodyClass}`">
           <slot></slot>
         </div>
         <div class="popup-dialog-footer">
@@ -28,6 +28,14 @@
         type: Boolean,
         default: false,
       },
+      dialogClass: {
+        type: String,
+        default: ''
+      },
+      dialogBodyClass: {
+        type: String,
+        default: ''
+      }
     },
     methods: {
       close() {

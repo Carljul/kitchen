@@ -109,7 +109,8 @@
             </div>
         </div>
         <div v-show="cartItems.length == 0" class="flex flex-col gap-[10px] items-center">
-            <p>Your Bag is empty! Lets fill it up</p>
+            <font-awesome-icon icon="basket-shopping" class="text-[42px]" />
+            <p>Your bag is empty! Lets fill it up</p>
             <router-link to="/products" class="w-[200px] p-[10px] text-[15px] font-bold bg-[#f24f52] text-white rounded-md text-center">Order Now</router-link>
         </div>
     </div>
@@ -133,7 +134,7 @@ export default {
         },
         deliveryFeeAmount() {
             return this.$defaultDeliveryFee
-        }
+        },
     },
     methods: {
         ...mapActions({addToCart: ACTIONS.CART.addToCart}),

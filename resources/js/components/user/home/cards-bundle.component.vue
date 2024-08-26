@@ -1,6 +1,8 @@
 <template>
     <router-link :to='goPath' class="w-full h-auto md:h-[350px] rounded-md flex flex-col md:flex-row gap-[10px] shadow-lg bg-white">
-        <img :src="item.image" :alt="item.name" class="w-full h-[350px] md:h-auto md:w-[300px] object-cover rounded-l-sm">
+        <data class="w-full h-[350px] overflow-hidden rounded-l-sm">
+            <img :src="item.image" :alt="item.name" class="h-full w-full md:w-auto object-cover rounded-l-sm">
+        </data>
         <div class="flex-1 flex flex-col p-3">
             <div class="flex-1 flex flex-col">
                 <p class="font-semibold">{{ item.name }}</p>
@@ -22,10 +24,10 @@
 
              <div class="flex justify-around items-center mt-2 md:mt-0">
                 <button
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    class="text-white whitespace-nowrap bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     @click.stop="(e) => addItem(e, item)"
                 >Add to Order</button>
-                <button class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Check out now!</button>
+                <button class="text-white whitespace-nowrap bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Check out now!</button>
              </div>
         </div>
     </router-link>

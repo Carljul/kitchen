@@ -1,9 +1,14 @@
-import login from '@pages/admin/Login.page.vue';
+import LoginPage from '@pages/admin/Login.page.vue';
+import DashboardPage from '@pages/admin/Dashboard.page.vue';
 
 const adminRouter = [
     {
         path: '/admin',
-        component: login
+        component: LoginPage
+    },
+    {
+        path: '/admin/dashboard',
+        component: DashboardPage
     },
 ]
 
